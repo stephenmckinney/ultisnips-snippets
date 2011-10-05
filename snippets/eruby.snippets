@@ -1,42 +1,44 @@
-# eruby
-
 # Vanilla eruby
-snippet each
-	<% ${1:collection}.each do |${2:member}| -%>
-		${3}
-	<% end -%>
+snippet %
+	<% ${1} %>
 snippet =
 	<%= ${1} %>
-snippet -
-	<% ${1} -%>
-snippet if
-	<% if ${1:cond} -%>
-		${2}
-	<% end -%>
-snippet ife
-	<% if ${1:cond} -%>
-		${2}
-	<% else -%>
-		${3}
-	<% end -%>
-snippet unless
-	<% unless ${1:cond} -%>
-		${2}
-	<% end -%>
-snippet unlesse
-	<% unless ${1:cond} -%>
-		${2}
-	<% else -%>
-		${3}
-	<% end -%>
-snippet y
-	<%= yield :${1:partial} %>
-snippet end
-	<% end -%>${1}
-snippet for
-	<% for ${2:item} in ${1} %>
+snippet #
+	#{1:var}
+snippet each
+	<% ${1:collection}.each do |${2:member}| %>
 		${3}
 	<% end %>
+snippet else
+	<% else %>
+snippet end
+	<% end %>${1}
+snippet for
+	<% for ${2:item} in ${1:items} %>
+		${3}
+	<% end %>
+snippet if
+	<% if ${1:condition} %>
+	  ${2}
+	<% end %>
+snippet ife
+	<% if ${1:condition} %>
+	  ${2}
+	<% else %>
+		${3}
+	<% end %>
+snippet unless
+	<% unless ${1:condition} %>
+		${2}
+	<% end %>
+snippet unlesse
+	<% unless ${1:condition} %>
+		${2}
+	<% else %>
+		${3}
+	<% end %>
+snippet y
+	<%= yield :${1:partial} %>
 # Ruby
 snippet dow
 	downto(${1:0}) { |${2:n}| ${3} }
@@ -86,63 +88,4 @@ snippet rej
 	reject { |${1:e}|, ${2} }
 snippet sel
 	select { |${1:e}|, ${2} }
-# Rails Views
-snippet rf
-	<%= render :file => '${1:item}' %>
-snippet rp
-	<%= render :partial => '${1:item}' %>
-snippet rpl
-	<%= render :partial => '${1:item}', :locals => { :${2:name} => '${3:value}'$4 } %>
-snippet rps
-	<%= render :partial => '${1:item}', :status => ${2:500} %>
-snippet rpc
-	<%= render :partial => '${1:item}', :collection => ${2:items} %>
-snippet lt
-	<%= link_to '${1:link text...}', ${2:action}_${3:model}_path %>
-snippet ltm
-	<%= link_to '${1:link text...}', ${2:action}_${3:model}_path(${4:@$3}) %>
-snippet ltp
-	<%= link_to '${1:link text...}', ${2:parent}_${3:child}_path(${4:@$2}, ${5:@$3}) %>
-snippet it
-	<%= image_tag "${1:image_path}" :alt => "${2:Alt text}" ${3} %>
-snippet cf
-	<% content_for :${1:head} do %>
-		${2}
-	<% end %>
-snippet js
-	<%= javascript_include_tag('${1:javascript_filename}') %>
-snippet css
-	<%= stylesheet_link_tag "${1:stylesheet_filename}" %>
-# Rails Views - forms
-snippet ff
-	<% form_for @${1:model} do |f| -%>
-		<%= f.error_messages %>
-		${3}
-		<%= f.submit "${2:button}" %>
-	<% end -%>
-snippet ffcb
-	<%= ${1:f}.check_box :${2:attribute} %>
-snippet ffff
-	<%= ${1:f}.file_field :${2:attribute} %>
-snippet ffhf
-	<%= ${1:f}.hidden_field :${2:attribute} %>
-snippet ffl
-	<%= ${1:f}.label :${2:attribute}, '${3:$2}' %>
-snippet ffpf
-	<%= ${1:f}.password_field :${2:attribute} %>
-snippet ffrb
-	<%= ${1:f}.radio_button :${2:attribute}, :${3:tag_value} %>
-snippet ffs
-	<%= ${1:f}.submit "${2:Button name}" %>
-snippet ffta
-	<%= ${1:f}.text_area :${2:attribute} %>
-snippet fftf
-	<%= ${1:f}.text_field :${2:attribute} %>
-snippet fields
-	<% fields_for :${1:model}, @${2:model} do |${3:f}| -%>
-		${4}
-	<% end -%>
-snippet ft
-	<% form_tag(:action => "${1:action}") do -%>
-		${2}
-	<% end -%>
+

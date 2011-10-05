@@ -1,0 +1,19 @@
+snippet fac
+	factory :${1:model} do
+	  ${2:attribute} ${3:value}
+	end
+snippet facb
+	FactoryGirl.build(:${1:model}, ${2:other_attributes})
+snippet facc
+	FactoryGirl.create(:${1:model}, ${2:other_attributes})
+snippet facd
+	FactoryGirl.define do
+	  ${2}
+	end
+snippet facg
+	FactoryGirl.generate(:${1:email})${2}
+snippet facs
+	sequence :${1:email} do |${2:n}|
+		${3:"person#{n}@example.com"}
+	end
+	${4}

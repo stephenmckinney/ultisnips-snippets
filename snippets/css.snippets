@@ -1,0 +1,85 @@
+snippet !
+	!important
+snippet #
+	#${1:id} {
+	  ${2}
+	}
+snippet cl
+	.${1:class} {
+	  ${2:color: pink;}
+	}
+snippet clear
+	clear: ${1:left/right/both/none};$0
+snippet color
+	color: #${1:DDD};$0
+snippet colorn
+	color: ${1:red};$0
+snippet colorr
+	color: rgb(${1:255},${2:255},${3:255});$0
+snippet cursor
+	cursor: ${1:default/auto/crosshair/pointer/move/*-resize/text/wait/help};$0
+snippet cursuru
+	cursor: url($1);$0
+snippet direction
+	direction: ${1:ltr|rtl};$0
+snippet float
+	float: ${1:left/right/none};$0
+snippet i
+	${1:!important}
+snippet letter
+	letter-spacing: ${1}${2:em/px};$0
+snippet letterem
+	letter-spacing: $1em;$0
+snippet letterpx
+	letter-spacing: $1px;$0
+snippet margin
+	margin: ${1:20px} ${2:0px} ${3:40px} ${4:0px};$0
+snippet marginb
+	margin-bottom: ${1:20px};$0
+snippet marginl
+	margin-left: ${1:20px};$0
+snippet marginr
+	margin-right: ${1:20px};$0
+snippet margint
+	margin-top: ${1:20px};$0
+snippet opacity
+	opacity: ${1:0.5};${100:
+	}-moz-opacity: ${1:0.5};${100:
+	}filter:alpha(opacity=${2:${1/(1?)0?\.(.*)/$1$2/}${1/^\d*\.\d\d+$|^\d*$|(^\d\.\d$)/(?1:0)/}});$0
+snippet overflow
+	overflow: ${1:visible/hidden/scroll/auto};$0
+snippet padding
+	padding: ${1:20px} ${2:0px} ${3:40px} ${4:0px};$0
+snippet paddingb
+	padding-bottom: ${1:20px};$0
+snippet paddingl
+	padding-left: ${1:20px};$0
+snippet paddingr
+	padding-right: ${1:20px};$0
+snippet paddingt
+	padding-top: ${1:20px};$0
+snippet position
+	position: ${1:static/relative/absolute/fixed};$0
+snippet scrollbar
+	scrollbar-base-color:       ${1:#CCCCCC};${2:
+	scrollbar-arrow-color:      ${3:#000000};
+	scrollbar-track-color:      ${4:#999999};
+	scrollbar-3dlight-color:    ${5:#EEEEEE};
+	scrollbar-highlight-color:  ${6:#FFFFFF};
+	scrollbar-face-color:       ${7:#CCCCCC};
+	scrollbar-shadow-color:     ${9:#999999};
+	scrollbar-darkshadow-color: ${8:#666666};}
+snippet tag
+	${1:tag} {
+	  ${2:color: pink;}
+	}
+snippet url
+	url('${1:../images/}${2}')${3}
+snippet vertical
+	vertical-align: ${1:baseline/sub/super/top/text-top/middle/bottom/text-bottom/length/%};$0
+snippet visibility
+	vertical-align: ${1:baseline/sub/super/top/text-top/middle/bottom/text-bottom/length/%};$0
+snippet white
+	white-space: ${1:normal/pre/nowrap};$0
+snippet z
+	z-index: $1;$0

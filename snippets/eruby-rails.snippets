@@ -1,0 +1,76 @@
+snippet cf
+	<% content_for :${1:yield_label_in_layout}, "${2:Some text...}" %>
+snippet cfb
+	<% content_for :${1:yield_label_in_layout} do %>
+		${2}
+	<% end %>
+snippet css
+	<%= stylesheet_link_tag "${1:stylesheet_filename}" %>
+snippet i18
+	I18n.t('${1:type.key}')${2}
+snippet it
+	<%= image_tag "${1:image_path}", :alt => "${2:Alt text}", ${3:other attributes} %>
+snippet js
+	<%= javascript_include_tag '${1:javascript_filename}' :cache => ${2:true} %>
+snippet rf
+	<%= render '${1:/path/to/views/books/edit}' %>
+snippet rp
+	<%= render '${1:books/edit}' %>
+snippet rpc
+	<%= render :partial => '${1:product}', :collection => ${2:@products} %>
+snippet rpl
+	<%= render :partial => '${1:shared/form}', :locals => { :${2:local_variable} => ${3:@item }$4 } %>
+snippet rps
+	<%= render :partial => '${1:file}', :status => ${2:500} %>
+snippet lt
+	<%= link_to '${1:link text...}', ${2:action}_${3:model}_path %>
+snippet ltm
+	<%= link_to '${1:link text...}', ${2:action}_${3:model}_path(${4:@$3}) %>
+snippet ltp
+	<%= link_to '${1:link text...}', ${2:parent}_${3:child}_path(${4:@$2}, ${5:@$3}) %>
+snippet ltr
+	<%= link_to_remote "${1:name}", ${2:options} %>
+# Forms
+snippet cs
+	<%= collection_select ${1:object}, ${2:method}, ${3:collection}, ${4:value_method}, ${5:text_method}${6:, options} %>${7}
+snippet ff
+	<%= form_for @${1:model} do |f| %>
+	  ${2}
+	<% end %>
+snippet ffcb
+	<%= ${1:f}.check_box :${2:attribute} %>
+snippet ffe
+	<%= form_for @${1:model} do |f| %>
+	  <%= f.error_messages %>
+	  ${2}
+	<% end %>
+snippet ffff
+	<%= ${1:f}.file_field :${2:attribute} %>
+snippet ffhf
+	<%= ${1:f}.hidden_field :${2:attribute} %>
+snippet ffl
+	<%= ${1:f}.label :${2:attribute}, '${3:$2}' %>
+snippet ffpf
+	<%= ${1:f}.password_field :${2:attribute} %>
+snippet ffrb
+	<%= ${1:f}.radio_button :${2:attribute}, :${3:tag_value} %>
+snippet ffs
+	<%= ${1:f}.submit "${2:button name}" %>
+snippet ffta
+	<%= ${1:f}.text_area :${2:attribute} %>
+snippet fftf
+	<%= ${1:f}.text_field :${2:attribute} %>
+snippet fields
+	<%= fields_for :${1:model}, @$1 do |${2:f}| %>
+	  ${3}
+	<% end %>
+snippet ft
+	<%= form_tag(${1:'url'}) do %>
+	  ${2}
+	<% end %>
+snippet ofc
+	<%= options_from_collection_for_select ${1:collection}, ${2:value_method}, ${3:text_method}, ${4:selected_value} %>
+snippet sbtr
+	<%= submit_to_remote ${1:name}, ${2:value} %>
+snippet st
+	<%= submit_tag "${1:Save changes}" %>
