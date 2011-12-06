@@ -1,12 +1,23 @@
 snippet #!
 	#!/usr/bin/env python
 snippet cla
-	class ${1:ClassName}(${2:object}):
-		"""${3:docstring for $1}"""
-		def __init__(self, ${4:arg}):
-			${5:super($1, self).__init__()}
-			self.$4 = $4
-			${6}
+	class ${1:ClassName}(${2:BassClassName}):
+		"""
+		${3:docstring for $1}.
+		"""
+		${4}
+snippet clam
+	class ${1:ModelName}(${2:BassModelName}):
+		"""
+		${3:A model of a $1}.
+		"""
+		${4:properties}
+
+		def __unicode__(self):
+			return self.${5:property}:
+
+		class Meta:
+			${6:meta properties}
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
 		"""${3:docstring for $1}"""
@@ -23,6 +34,14 @@ snippet docs
 	Author: ${2:`g:snips_author`}
 	Description: ${3}
 	'''
+snippet if:
+	if ${1:condition}:
+		${2}
+snippet ife:
+	if ${1:condition}:
+		${2}
+	else:
+		${3}
 snippet for
 	for ${1:object} in ${2:objects}:
 		${3:pass}
@@ -39,7 +58,7 @@ snippet imp
 snippet init
 	def __init__(self, ${1:args}):
 		${2}
-snippet ld
+snippet lam
 	${1:var} = lambda ${2:vars} : ${3:action}
 snippet property
 	def ${1:foo}():
@@ -48,7 +67,7 @@ snippet property
 			${3:return self._$1}
 		def fset(self, value):
 			${4:self._$1 = value}
-snippet wh
+snippet whi
 	while ${1:condition}:
 		${2:# code...}
 snippet pdb
