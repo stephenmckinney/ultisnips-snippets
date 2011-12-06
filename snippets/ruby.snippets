@@ -1,5 +1,5 @@
 snippet #
-	#${1:var}${2}
+	#{${1:var}}${2}
 snippet am
 	alias_method :${1:new_name}, :${2:old_name}
 snippet as
@@ -95,12 +95,16 @@ snippet case
 	else
 		${3}
 	end
-snippet class
-	class ${1:`Snippet_RubyClassNameFromFilename()`}${2}
+snippet cla
+	class ${1}
 		${3}
 	end
 snippet classe
 	class ${1:ErrorClassName} < ${2:StandardError}; end${3}
+snippet deb
+	require 'pry'; binding.pry
+snippet debugger
+	require 'pry'; binding.pry
 snippet def
 	def ${1:name}
 		${2}
@@ -251,6 +255,8 @@ snippet ope
 	open(${1:path}, "${2:rwab}") { |${3:io}| ${4} }
 snippet pathhere
 	File.join(File.dirname(__FILE__), *%w[${1:rel_path_here}])
+snippet pry
+	require 'pry'; binding.pry
 snippet Pn
 	PStore.new(${1})
 snippet r
@@ -263,6 +269,8 @@ snippet rejecto
 	end
 snippet rep
 	results.report("${1:name}:") { TESTS.times { ${2} } }
+snippet req
+	require "${1:library}"
 snippet rw
 	attr_accessor :${1:attr_names}
 snippet select
