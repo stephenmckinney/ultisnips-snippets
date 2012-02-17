@@ -50,13 +50,15 @@ snippet empty
 snippet if
 	{% if ${1} %}
 	${2}
-	{% endif %}
+	{% endif %}${3}
+snippet ifo
+	{% if ${1} %}${2}{% endif %}${3}
 snippet ife
 	{% if ${1} %}
 	${2}
 	{% else %}
 	${3}
-	{% endif %}
+	{% endif %}${3}
 snippet else
 	{% else %}
 	${1}
@@ -84,12 +86,14 @@ snippet ssi
 	{% ssi ${1} %}
 snippet trans
 	{% trans "${1:string}" %}
+snippet thumb
+	{% thumbnail ${1:image} ${2:width_val}x${3:height_val} ${4:detail} ${5:upscale} ${6:crop="smart"} %}
 snippet url
 	{% url ${1} as ${2} %}
 snippet widthratio
 	{% widthratio ${1:this_value} ${2:max_value} ${3:100} %}
 snippet with
-	{% with ${1} as ${2} %}
+	{% with ${1}=${2} %}
 
 # Template Filters
 
