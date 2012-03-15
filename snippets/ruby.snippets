@@ -84,6 +84,12 @@ snippet ast
 	assert_throws(:${1:expected}) { ${2} }
 snippet astr
 	assert_true ${1:actual}
+snippet beg
+	begin
+		${1:process...}
+	rescue ${2:Exception} => ${3:e}
+		${4:handle error...}
+	end
 snippet bm
 	TESTS = ${1:10_000}
 	Benchmark.bmbm do |results|
@@ -306,6 +312,12 @@ snippet tc
 		def test_${3:case_name}
 			${4}
 		end
+	end
+snippet try
+	begin
+		${1:process...}
+	rescue ${2:Exception} => ${3:e}
+		${4:handle error...}
 	end
 snippet unless
 	unless ${1:condition}
