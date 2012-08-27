@@ -129,17 +129,19 @@ snippet i18
 snippet ist
 	<%= image_submit_tag("<+agree.png+>"<+<+, :id => "<+id+>"+><+, :name => "<+name+>"+><+, :class => "<+class+>"+><+, :disabled => <+false+>+>+>) %>
 snippet log
-	RAILS_DEFAULT_LOGGER.${1:debug} ${2}
+	Rails.logger.${1:debug} "${2:message}"${3}
+snippet logc
+	Rails.logger.debug "${1:message}".white_on_red
 snippet logd
-	logger.debug { "${1:message}" }${2}
+	Rails.logger.debug "${1:message}"
 snippet loge
-	logger.error { "${1:message}" }${2}
+	Rails.logger.error "${1:message}"
 snippet logf
-	logger.fatal { "${1:message}" }${2}
+	Rails.logger.fatal "${1:message}"
 snippet logi
-	logger.info { "${1:message}" }${2}
+	Rails.logger.info "${1:message}"
 snippet logw
-	logger.warn { "${1:message}" }${2}
+	Rails.logger.warn "${1:message}"
 snippet mac
 	add_column :${1:table}, :${2:column}, :${3:type}
 snippet mapc

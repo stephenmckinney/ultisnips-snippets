@@ -2,18 +2,21 @@ snippet fac
 	factory :${1:model} do
 	  ${2:attribute} ${3:value}
 	end
+snippet faca
+	association :${1:association_name}, factory: :${2:optional_class_name}
 snippet facb
-	FactoryGirl.build(:${1:model}, ${2:other_attributes})
+	build(:${1:model}, ${2:other_attributes})
 snippet facc
-	FactoryGirl.create(:${1:model}, ${2:other_attributes})
+	create(:${1:model}, ${2:other_attributes})
 snippet facd
 	FactoryGirl.define do
 	  ${2}
 	end
 snippet facg
-	FactoryGirl.generate(:${1:email})${2}
+	${1:attribute} { generate(:${1:email}) }${2}
 snippet facs
-	sequence :${1:email} do |${2:n}|
-		${3:"person#{n}@example.com"}
+	sequence(${1:email}) {|${2:n}| ${3:"person#{n}@example.com" }${4}
+snippet fact
+	trait :${1:published} do
+	  ${2:attribute} ${3:value}
 	end
-	${4}
