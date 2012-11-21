@@ -176,6 +176,8 @@ shared_examples_for "${1:do something}" do
 end
 endsnippet
 
+# Shoulds
+
 snippet sh "Should =="
 should == ${1:value}
 endsnippet
@@ -247,6 +249,8 @@ endsnippet
 snippet sh "Should raise error"
 expect { ${1:method call} }.to raise_error(${2:Error class}, ${3:message string})${4}
 endsnippet
+
+# Should nots
 
 snippet shn "Should not =="
 should_not == ${1:value}

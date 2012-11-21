@@ -1,3 +1,5 @@
+# Rails ActionView::Helpers
+
 snippet cf "cf"
 <% content_for :${1:yield_label_in_layout}, "${2:Some text...}" %>
 endsnippet
@@ -60,8 +62,7 @@ snippet ltr "ltr"
 <%= link_to_remote "${1:name}", ${2:options} %>
 endsnippet
 
-<%= link_to_remote "${1:name}", ${2:options} %>
-endsnippet
+# Forms
 
 snippet cs "cs"
 <%= collection_select ${1:object}, ${2:method}, ${3:collection}, ${4:value_method}, ${5:text_method}${6:, options} %>${7}
