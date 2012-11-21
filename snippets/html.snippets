@@ -166,6 +166,16 @@ snip.rv = snip.fn and 'Hallo' or 'Nothin'
 </body>
 endsnippet
 
+snippet css "XHTML <link> for css"
+<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" title="${4:no title}" charset="${5:utf-8}"`!p x(snip)`>
+endsnippet
+
+snippet css "XHTML <style>"
+<style type="text/css" media="screen">
+	$0
+</style>
+endsnippet
+
 snippet div "XHTML <div>"
 <div`!p snip.rv=' id="' if t[1] else ""`${1:name}`!p snip.rv = '"' if t[1] else ""`>
    $0
@@ -194,28 +204,18 @@ snippet head "XHTML <head>"
 </head>
 endsnippet
 
-snippet link "XHTML <link>"
-<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" title="${4:no title}" charset="${5:utf-8}"`!p x(snip)`>
-endsnippet
-
-snippet meta "XHTML <meta>"
-<meta name="${1:name}" content="${2:content}"`!p x(snip)`>
-endsnippet
-
-snippet scriptsrc "XHTML <script src...>"
+snippet js "XHTML <script src...> for js"
 <script src="$1" type="text/javascript" charset="${3:utf-8}"></script>
 endsnippet
 
-snippet script "XHTML <script>"
+snippet js "XHTML <script>"
 <script type="text/javascript" charset="utf-8">
 	$0
 </script>
 endsnippet
 
-snippet style "XHTML <style>"
-<style type="text/css" media="screen">
-	$0
-</style>
+snippet meta "XHTML <meta>"
+<meta name="${1:name}" content="${2:content}"`!p x(snip)`>
 endsnippet
 
 snippet table "XHTML <table>"
