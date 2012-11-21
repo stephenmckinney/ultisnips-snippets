@@ -1,0 +1,143 @@
+snippet cf "cf"
+<% content_for :${1:yield_label_in_layout}, "${2:Some text...}" %>
+endsnippet
+
+snippet cfb "cfb"
+<% content_for :${1:yield_label_in_layout} do %>
+	${2}
+<% end %>
+endsnippet
+
+snippet css "css"
+<%= stylesheet_link_tag "${1:stylesheet_filename}" %>
+endsnippet
+
+snippet i18 "i18"
+I18n.t('${1:type.key}')${2}
+endsnippet
+
+snippet it "it"
+<%= image_tag "${1:image_path}", :alt => "${2:Alt text}", ${3:other attributes} %>
+endsnippet
+
+snippet js "js"
+<%= javascript_include_tag '${1:javascript_filename}' :cache => ${2:true} %>
+endsnippet
+
+snippet rf "rf"
+<%= render '${1:/path/to/views/books/edit}' %>
+endsnippet
+
+snippet rp "rp"
+<%= render '${1:books/edit}' %>
+endsnippet
+
+snippet rpc "rpc"
+<%= render :partial => '${1:product}', :collection => ${2:@products} %>
+endsnippet
+
+snippet rpl "rpl"
+<%= render :partial => '${1:shared/form}', :locals => { :${2:local_variable} => ${3:@item }$4 } %>
+endsnippet
+
+snippet rps "rps"
+<%= render :partial => '${1:file}', :status => ${2:500} %>
+endsnippet
+
+snippet lt "lt"
+<%= link_to '${1:link text...}', ${2:action}_${3:model}_path %>
+endsnippet
+
+snippet ltm "ltm"
+<%= link_to '${1:link text...}', ${2:action}_${3:model}_path(${4:@$3}) %>
+endsnippet
+
+snippet ltp "ltp"
+<%= link_to '${1:link text...}', ${2:parent}_${3:child}_path(${4:@$2}, ${5:@$3}) %>
+endsnippet
+
+snippet ltr "ltr"
+<%= link_to_remote "${1:name}", ${2:options} %>
+endsnippet
+
+<%= link_to_remote "${1:name}", ${2:options} %>
+endsnippet
+
+snippet cs "cs"
+<%= collection_select ${1:object}, ${2:method}, ${3:collection}, ${4:value_method}, ${5:text_method}${6:, options} %>${7}
+endsnippet
+
+snippet ff "ff"
+<%= form_for @${1:model} do |f| %>
+  ${2}
+<% end %>
+endsnippet
+
+snippet ffcb "ffcb"
+<%= ${1:f}.check_box :${2:attribute} %>
+endsnippet
+
+snippet ffe "ffe"
+<%= form_for @${1:model} do |f| %>
+  <%= f.error_messages %>
+  ${2}
+<% end %>
+endsnippet
+
+snippet ffff "ffff"
+<%= ${1:f}.file_field :${2:attribute} %>
+endsnippet
+
+snippet ffhf "ffhf"
+<%= ${1:f}.hidden_field :${2:attribute} %>
+endsnippet
+
+snippet ffl "ffl"
+<%= ${1:f}.label :${2:attribute}, '${3:$2}' %>
+endsnippet
+
+snippet ffpf "ffpf"
+<%= ${1:f}.password_field :${2:attribute} %>
+endsnippet
+
+snippet ffrb "ffrb"
+<%= ${1:f}.radio_button :${2:attribute}, :${3:tag_value} %>
+endsnippet
+
+snippet ffs "ffs"
+<%= ${1:f}.submit "${2:button name}" %>
+endsnippet
+
+snippet ffta "ffta"
+<%= ${1:f}.text_area :${2:attribute} %>
+endsnippet
+
+snippet fftf "fftf"
+<%= ${1:f}.text_field :${2:attribute} %>
+endsnippet
+
+snippet fields "fields"
+<%= fields_for :${1:model}, @$1 do |${2:f}| %>
+  ${3}
+<% end %>
+endsnippet
+
+snippet ft "ft"
+<%= form_tag(${1:'url'}) do %>
+  ${2}
+<% end %>
+endsnippet
+
+snippet ofc "ofc"
+<%= options_from_collection_for_select ${1:collection}, ${2:value_method}, ${3:text_method}, ${4:selected_value} %>
+endsnippet
+
+snippet sbtr "sbtr"
+<%= submit_to_remote ${1:name}, ${2:value} %>
+endsnippet
+
+snippet st "st"
+<%= submit_tag "${1:Save changes}" %>
+endsnippet
+
+# vim:ft=snippets:

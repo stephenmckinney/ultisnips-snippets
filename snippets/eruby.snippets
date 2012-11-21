@@ -1,91 +1,164 @@
-# Vanilla eruby
-snippet %
-	<% ${1} %>
-snippet =
-	<%= ${1} %>
-snippet #
-	#{1:var}
-snippet each
-	<% ${1:collection}.each do |${2:member}| %>
-		${3}
-	<% end %>
-snippet else
-	<% else %>
-snippet end
-	<% end %>${1}
-snippet for
-	<% for ${2:item} in ${1:items} %>
-		${3}
-	<% end %>
-snippet if
-	<% if ${1:condition} %>
-	  ${2}
-	<% end %>
-snippet ife
-	<% if ${1:condition} %>
-	  ${2}
-	<% else %>
-		${3}
-	<% end %>
-snippet unless
-	<% unless ${1:condition} %>
-		${2}
-	<% end %>
-snippet unlesse
-	<% unless ${1:condition} %>
-		${2}
-	<% else %>
-		${3}
-	<% end %>
-snippet y
-	<%= yield :${1:partial} %>
-# Ruby code commonly used in eruby
-snippet dow
-	downto(${1:0}) { |${2:n}| ${3} }
-snippet ste
-	step(${1:2}) { |${2:n}| ${3} }
-snippet tim
-	times { |${1:n}| ${2} }
-snippet upt
-	upto(${1:1.0/0.0}) { |${2:n}| ${3} }
-snippet loo
-	loop { ${1} }
-snippet ea
-	each { |${1:e}| ${2} }
-snippet eab
-	each_byte { |${1:byte}| ${2} }
-snippet eac- each_char { |chr| .. }
-	each_char { |${1:chr}| ${2} }
-snippet eac- each_cons(..) { |group| .. }
-	each_cons(${1:2}) { |${2:group}| ${3} }
-snippet eai
-	each_index { |${1:i}| ${2} }
-snippet eak
-	each_key { |${1:key}| ${2} }
-snippet eal
-	each_line { |${1:line}| ${2} }
-snippet eap
-	each_pair { |${1:name}, ${2:val}| ${3} }
-snippet eas-
-	each_slice(${1:2}) { |${2:group}| ${3} }
-snippet eav
-	each_value { |${1:val}| ${2} }
-snippet eawi
-	each_with_index { |${1:e}, ${2:i}| ${3} }
-snippet reve
-	reverse_each { |${1:e}| ${2} }
-snippet inj
-	inject(${1:init}) { |${2:mem}, ${3:var}| ${4} }
-snippet map
-	map { |${1:e}| ${2} }
-snippet mapwi-
-	enum_with_index.map { |${1:e}, ${2:i}| ${3} }
-snippet col
-	collect { |${1:e}| ${2} }
-snippet det
-	detect { |${1:e}| ${2} }
-snippet rej
-	reject { |${1:e}|, ${2} }
-snippet sel
-	select { |${1:e}|, ${2} }
+snippet % "%"
+<% ${1} %>
+endsnippet
 
+snippet = "="
+<%= ${1} %>
+endsnippet
+
+snippet # "#"
+#{1:var}
+endsnippet
+
+snippet each "each"
+<% ${1:collection}.each do |${2:member}| %>
+	${3}
+<% end %>
+endsnippet
+
+snippet else "else"
+<% else %>
+endsnippet
+
+snippet end "end"
+<% end %>${1}
+endsnippet
+
+snippet for "for"
+<% for ${2:item} in ${1:items} %>
+	${3}
+<% end %>
+endsnippet
+
+snippet if "if"
+<% if ${1:condition} %>
+  ${2}
+<% end %>
+endsnippet
+
+snippet ife "ife"
+<% if ${1:condition} %>
+  ${2}
+<% else %>
+	${3}
+<% end %>
+endsnippet
+
+snippet unless "unless"
+<% unless ${1:condition} %>
+	${2}
+<% end %>
+endsnippet
+
+snippet unlesse "unlesse"
+<% unless ${1:condition} %>
+	${2}
+<% else %>
+	${3}
+<% end %>
+endsnippet
+
+snippet y "y"
+<%= yield :${1:partial} %>
+endsnippet
+
+<%= yield :${1:partial} %>
+endsnippet
+
+snippet dow "dow"
+downto(${1:0}) { |${2:n}| ${3} }
+endsnippet
+
+snippet ste "ste"
+step(${1:2}) { |${2:n}| ${3} }
+endsnippet
+
+snippet tim "tim"
+times { |${1:n}| ${2} }
+endsnippet
+
+snippet upt "upt"
+upto(${1:1.0/0.0}) { |${2:n}| ${3} }
+endsnippet
+
+snippet loo "loo"
+loop { ${1} }
+endsnippet
+
+snippet ea "ea"
+each { |${1:e}| ${2} }
+endsnippet
+
+snippet eab "eab"
+each_byte { |${1:byte}| ${2} }
+endsnippet
+
+snippet eac- "each_char { |chr| .. }"
+each_char { |${1:chr}| ${2} }
+endsnippet
+
+snippet eac- "each_cons(..) { |group| .. }"
+each_cons(${1:2}) { |${2:group}| ${3} }
+endsnippet
+
+snippet eai "eai"
+each_index { |${1:i}| ${2} }
+endsnippet
+
+snippet eak "eak"
+each_key { |${1:key}| ${2} }
+endsnippet
+
+snippet eal "eal"
+each_line { |${1:line}| ${2} }
+endsnippet
+
+snippet eap "eap"
+each_pair { |${1:name}, ${2:val}| ${3} }
+endsnippet
+
+snippet eas- "eas-"
+each_slice(${1:2}) { |${2:group}| ${3} }
+endsnippet
+
+snippet eav "eav"
+each_value { |${1:val}| ${2} }
+endsnippet
+
+snippet eawi "eawi"
+each_with_index { |${1:e}, ${2:i}| ${3} }
+endsnippet
+
+snippet reve "reve"
+reverse_each { |${1:e}| ${2} }
+endsnippet
+
+snippet inj "inj"
+inject(${1:init}) { |${2:mem}, ${3:var}| ${4} }
+endsnippet
+
+snippet map "map"
+map { |${1:e}| ${2} }
+endsnippet
+
+snippet mapwi- "mapwi-"
+enum_with_index.map { |${1:e}, ${2:i}| ${3} }
+endsnippet
+
+snippet col "col"
+collect { |${1:e}| ${2} }
+endsnippet
+
+snippet det "det"
+detect { |${1:e}| ${2} }
+endsnippet
+
+snippet rej "rej"
+reject { |${1:e}|, ${2} }
+endsnippet
+
+snippet sel "sel"
+select { |${1:e}|, ${2} }
+endsnippet
+
+# vim:ft=snippets:

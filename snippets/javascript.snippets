@@ -1,79 +1,124 @@
-snippet a
-	alert(${1:this.element});
-snippet anon
-	function(${1}) {
-	  ${2}
-	};
-snippet as
-	alert("${1}");
-snippet case
-	case '${1:case}':
-		${2:// code}
-		break;
+snippet a "a"
+alert(${1:this.element});
+endsnippet
+
+snippet anon "anon"
+function(${1}) {
+  ${2}
+};
+endsnippet
+
+snippet as "as"
+alert("${1}");
+endsnippet
+
+snippet case "case"
+case '${1:case}':
+	${2:// code}
+	break;
+${3}
+endsnippet
+
+snippet ea "ea"
+each(function() {
+  ${1:// code}
+});
+endsnippet
+
+snippet do "do"
+do {
+	${2:/* code */}
+} while (${1:/* condition */});
+endsnippet
+
+snippet for "for"
+for (var <+i+>=0; <+i+> < <+<+Things+>.length+>; <+i+>++) {
+<+<+Things+>[<+i+>]+>
+};
+endsnippet
+
+snippet fun "fun"
+function ${1}(${2}) {
 	${3}
-snippet ea
-	each(function() {
-	  ${1:// code}
-	});
-snippet do
-	do {
-		${2:/* code */}
-	} while (${1:/* condition */});
-snippet for
-	for (var <+i+>=0; <+i+> < <+<+Things+>.length+>; <+i+>++) {
-	<+<+Things+>[<+i+>]+>
-	};
-snippet fun
-	function ${1}(${2}) {
-		${3}
-	}
-snippet get
-	getElementBy${1:Id}('${2}')${3}
-snippet gets
-	getElementsBy${1:TagName}('${2}')${3}
-snippet if
-	if (${1:true}) {
-	  ${2}
-	};
-snippet ife
-	if (${1:true}) {
-		${2}
-	} else {
-	};
-snippet l
-	console.log(${1});
-snippet log
-	console.log(${1});
-snippet met
-	${1:method_name}: function(${2:attribute}){
-	  ${3}
-	}${4:, }
-snippet pe
-	${1:property}: function(event) {
-	  ${2:body}
-	}
-snippet pf
-	${1:property}: function() {
-	  ${2:body}
-	}
-snippet proto
-	${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
-		${4:// body}
-	};
-snippet switch
-	switch(${1:expression}) {
-		case '${3:case}':
-			${4:// code}
-			break;
-		${5}
-		default:
-			${2:// code}
-	}
-snippet t
-	I18n.t('${1:type.key}', { defaultValue: '${2}' })${3}
-snippet timeout
-	setTimeout(function() { ${1} }, ${2:10});
-snippet whi
-	while (${1:/* condition */}) {
-		${2:/* code */}
-	}
+}
+endsnippet
+
+snippet get "get"
+getElementBy${1:Id}('${2}')${3}
+endsnippet
+
+snippet gets "gets"
+getElementsBy${1:TagName}('${2}')${3}
+endsnippet
+
+snippet if "if"
+if (${1:true}) {
+  ${2}
+};
+endsnippet
+
+snippet ife "ife"
+if (${1:true}) {
+	${2}
+} else {
+};
+endsnippet
+
+snippet l "l"
+console.log(${1});
+endsnippet
+
+snippet log "log"
+console.log(${1});
+endsnippet
+
+snippet met "met"
+${1:method_name}: function(${2:attribute}){
+  ${3}
+}${4:, }
+endsnippet
+
+snippet pe "pe"
+${1:property}: function(event) {
+  ${2:body}
+}
+endsnippet
+
+snippet pf "pf"
+${1:property}: function() {
+  ${2:body}
+}
+endsnippet
+
+snippet proto "proto"
+${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
+	${4:// body}
+};
+endsnippet
+
+snippet switch "switch"
+switch(${1:expression}) {
+	case '${3:case}':
+		${4:// code}
+		break;
+	${5}
+	default:
+		${2:// code}
+}
+endsnippet
+
+snippet t "t"
+I18n.t('${1:type.key}', { defaultValue: '${2}' })${3}
+endsnippet
+
+snippet timeout "timeout"
+setTimeout(function() { ${1} }, ${2:10});
+endsnippet
+
+snippet whi "whi"
+while (${1:/* condition */}) {
+	${2:/* code */}
+}
+endsnippet
+
+# vim:ft=snippets:

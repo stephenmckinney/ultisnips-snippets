@@ -1,175 +1,285 @@
-snippet doctype HTML 5
-	<!DOCTYPE html>
-snippet doctype HTML 4.01 Strict
-	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-	"http://www.w3.org/TR/html4/strict.dtd">
-snippet doctype HTML 4.01 Transitional
-	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-	"http://www.w3.org/TR/html4/loose.dtd">
-snippet doctype XHTML 1.0 Frameset
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-snippet doctype XHTML 1.0 Strict
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-snippet doctype XHTML 1.0 Transitional
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-snippet doctype XHTML 1.1
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-snippet a
-	<a href="${1:#}">${2}</a>${3}
-snippet article
-	<article>
-	    ${1}
-	</article>
-snippet aside
-	<aside>
-	    ${1}
-	</aside>
-snippet audio
-	<audio src="${1}" controls="controls" preload="${2}">
-	    Your browser does not support the audio element
-	</audio>${3}
-snippet base
-	<base href="<++>"<+ target="<++>"+>/>
-snippet body
-	<body id="${1}">
-		${2}
-	</body>
-snippet css
-	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8">${4}
-snippet div
-	<div id="${1}">
-		${2}
-	</div>
-snippet divc
-	<div class="${1}">
-	  ${2}
-	</div>
-snippet divi
-	<div id="${1}">
-	  ${2}
-	</div>
-snippet fieldset
-	<fieldset id="$1">
-		<legend>${1:name}</legend>
+snippet doctype "HTML 5"
+<!DOCTYPE html>
+endsnippet
 
-		${3}
-	</fieldset>
-snippet footer
-	<footer>
-	    ${1}
-	</footer>
-snippet form
-	<form action="${1:action}" method="${2:post}" accept-charset="utf-8">
-	  ${3}
-	
-	  <p><input type="submit" value="Continue &rarr;"/></p>
-	</form>
-snippet h1
-	<h1 id="${1}">${2}</h1>
-snippet h2
-	<h2 id="${1:heading}">${2:$1}</h2>
-snippet h3
-	<h3 id="${1:heading}">${2:$1}</h3>
-snippet head
-	<head>
-	  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-	  <title>${1:Page Title}</title>
-	  ${2}
-	</head>
-snippet header
-	<header>
-	    ${1}
-	</header>
-snippet html
-	<html>
+snippet doctype "HTML 4.01 Strict"
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+endsnippet
+
+snippet doctype "HTML 4.01 Transitional"
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+endsnippet
+
+snippet doctype "XHTML 1.0 Frameset"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+endsnippet
+
+snippet doctype "XHTML 1.0 Strict"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+endsnippet
+
+snippet doctype "XHTML 1.0 Transitional"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+endsnippet
+
+snippet doctype "XHTML 1.1"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+endsnippet
+
+snippet a "a"
+<a href="${1:#}">${2}</a>${3}
+endsnippet
+
+snippet article "article"
+<article>
+    ${1}
+</article>
+endsnippet
+
+snippet aside "aside"
+<aside>
+    ${1}
+</aside>
+endsnippet
+
+snippet audio "audio"
+<audio src="${1}" controls="controls" preload="${2}">
+    Your browser does not support the audio element
+</audio>${3}
+endsnippet
+
+snippet base "base"
+<base href="<++>"<+ target="<++>"+>/>
+endsnippet
+
+snippet body "body"
+<body id="${1}">
+	${2}
+</body>
+endsnippet
+
+snippet css "css"
+<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8">${4}
+endsnippet
+
+snippet div "div"
+<div id="${1}">
+	${2}
+</div>
+endsnippet
+
+snippet divc "divc"
+<div class="${1}">
+  ${2}
+</div>
+endsnippet
+
+snippet divi "divi"
+<div id="${1}">
+  ${2}
+</div>
+endsnippet
+
+snippet fieldset "fieldset"
+<fieldset id="$1">
+	<legend>${1:name}</legend>
+	${3}
+</fieldset>
+endsnippet
+
+snippet footer "footer"
+<footer>
+    ${1}
+</footer>
+endsnippet
+
+snippet form "form"
+<form action="${1:action}" method="${2:post}" accept-charset="utf-8">
+  ${3}
+  <p><input type="submit" value="Continue &rarr;"/></p>
+</form>
+endsnippet
+
+snippet h1 "h1"
+<h1 id="${1}">${2}</h1>
+endsnippet
+
+snippet h2 "h2"
+<h2 id="${1:heading}">${2:$1}</h2>
+endsnippet
+
+snippet h3 "h3"
+<h3 id="${1:heading}">${2:$1}</h3>
+endsnippet
+
+snippet head "head"
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+  <title>${1:Page Title}</title>
+  ${2}
+</head>
+endsnippet
+
+snippet header "header"
+<header>
+    ${1}
+</header>
+endsnippet
+
+snippet html "html"
+<html>
+${1}
+</html>
+endsnippet
+
+snippet ifie "ifie"
+<!--[if IE ${1:6}]>${2}<![endif]-->${3}
+endsnippet
+
+snippet img "img"
+<img src="${1}"${2} />
+endsnippet
+
+snippet input "input"
+<input type="${1:text/submit/hidden/button}" name="${2}" value="${3:value}" id="${4:$2}"/>${5}
+endsnippet
+
+snippet inputl "inputl"
+<label for="${1:input_id}">${2}</label>
+<input type="${3:text/submit/hidden/button}" name="${4:$1}" value="${5:value}" id="${6:$1}"/>${7}
+endsnippet
+
+snippet js "js"
+<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
+endsnippet
+
+snippet label "label"
+<label for="${1:id}">${2:label_text}</label>
+endsnippet
+
+snippet li "li"
+<li>${1}</li>
+endsnippet
+
+snippet link "link"
+<link rel="${1:stylesheet}" href="${2:path-to-stylesheet}.css" type="text/css" media="${3:screen}" charset="${4:utf-8}"/>${5}
+endsnippet
+
+snippet mailto "mailto"
+<a href="mailto:<+email+><+?subject=<+feedback+>+>"><+email me+></a>
+endsnippet
+
+snippet meta "meta"
+<meta name="${1:name}" content="${2:content}"/>
+endsnippet
+
+snippet nav "nav"
+<nav>
+    ${1}
+</nav>
+endsnippet
+
+snippet option "option"
+<option value="${1}">${2}</option>
+endsnippet
+
+snippet p "p"
+<p>
+  ${1}
+</p>
+endsnippet
+
+snippet section "section"
+<section>
+    ${1}
+</section>
+endsnippet
+
+snippet select "select"
+<select name="${1}" id="${2}">
+	${3}
+</select>
+endsnippet
+
+snippet span "span"
+<span class="${1:name}">${2}</span>
+endsnippet
+
+snippet script "script"
+<script type="text/javascript" charset="utf-8">
 	${1}
-	</html>
-snippet ifie
-	<!--[if IE ${1:6}]>${2}<![endif]-->${3}
-snippet img
-	<img src="${1}"${2} />
-snippet input
-	<input type="${1:text/submit/hidden/button}" name="${2}" value="${3:value}" id="${4:$2}"/>${5}
-snippet inputl
-	<label for="${1:input_id}">${2}</label>
-	<input type="${3:text/submit/hidden/button}" name="${4:$1}" value="${5:value}" id="${6:$1}"/>${7}
-snippet js
-	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
-snippet label
-	<label for="${1:id}">${2:label_text}</label>
-snippet li
-	<li>${1}</li>
-snippet link
-	<link rel="${1:stylesheet}" href="${2:path-to-stylesheet}.css" type="text/css" media="${3:screen}" charset="${4:utf-8}"/>${5}
-snippet mailto
-	<a href="mailto:<+email+><+?subject=<+feedback+>+>"><+email me+></a>
-snippet meta
-	<meta name="${1:name}" content="${2:content}"/>
-snippet nav
-	<nav>
-	    ${1}
-	</nav>
-snippet option
-	<option value="${1}">${2}</option>
-snippet p
-	<p>
-	  ${1}
-	</p>
-snippet section
-	<section>
-	    ${1}
-	</section>
-snippet select
-	<select name="${1}" id="${2}">
-		${3}
-	</select>
-snippet span
-	<span class="${1:name}">${2}</span>
-snippet script
-	<script type="text/javascript" charset="utf-8">
-		${1}
-	</script>${2}
-snippet space
-	&nbsp;
-snippet style
-	<style type="text/css" media="screen">
-	  ${1}
-	</style>
-snippet t
-	<${1:div}${2}>
-	  ${3}
-	</$1>
-snippet table
-	<table border="${1:0}">
-		<tr><th>${2:Header}</th></tr>
-		<tr><th>${3:Data}</th></tr>
-	</table>${4}
-snippet td
-	<td>${1}</td>
-snippet textarea
-	<textarea name="${1:Name}" rows="${2:8}" cols="${2:40}">${3}</textarea>
-snippet th
-	<th>${1}</th>
-snippet ti
-	<${1:span}${2}>${3}</$1>
-snippet title
-	<title>${1:Page Title}</title>
-snippet tr
-	<tr>
-	  ${1}
-	</tr>
-snippet tt
-	<tt>${1}</tt>${2}
-snippet ul
-	<ul>
-	  ${1}
-	</ul>
-snippet video
-	<video src="${1}" controls="controls" preload="${2}">
-	    Your browser does not support the video element
-	</video>${3}
+</script>${2}
+endsnippet
 
+snippet space "space"
+&nbsp;
+endsnippet
+
+snippet style "style"
+<style type="text/css" media="screen">
+  ${1}
+</style>
+endsnippet
+
+snippet t "t"
+<${1:div}${2}>
+  ${3}
+</$1>
+endsnippet
+
+snippet table "table"
+<table border="${1:0}">
+	<tr><th>${2:Header}</th></tr>
+	<tr><th>${3:Data}</th></tr>
+</table>${4}
+endsnippet
+
+snippet td "td"
+<td>${1}</td>
+endsnippet
+
+snippet textarea "textarea"
+<textarea name="${1:Name}" rows="${2:8}" cols="${2:40}">${3}</textarea>
+endsnippet
+
+snippet th "th"
+<th>${1}</th>
+endsnippet
+
+snippet ti "ti"
+<${1:span}${2}>${3}</$1>
+endsnippet
+
+snippet title "title"
+<title>${1:Page Title}</title>
+endsnippet
+
+snippet tr "tr"
+<tr>
+  ${1}
+</tr>
+endsnippet
+
+snippet tt "tt"
+<tt>${1}</tt>${2}
+endsnippet
+
+snippet ul "ul"
+<ul>
+  ${1}
+</ul>
+endsnippet
+
+snippet video "video"
+<video src="${1}" controls="controls" preload="${2}">
+    Your browser does not support the video element
+</video>${3}
+endsnippet
+
+# vim:ft=snippets:
