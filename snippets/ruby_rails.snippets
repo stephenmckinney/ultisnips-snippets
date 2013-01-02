@@ -56,6 +56,11 @@ snippet bt "bt"
 belongs_to :${1:association}
 endsnippet
 
+snippet clam "ActiveRecord class" !b
+class ${1:Model} < ActiveRecord::Base
+  ${0}
+end
+endsnippet
 snippet crw "crw"
 cattr_accessor :${1:attr_names}
 endsnippet
