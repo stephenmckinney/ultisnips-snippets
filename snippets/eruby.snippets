@@ -1,3 +1,5 @@
+extends html
+
 # Vanilla eruby
 
 snippet % "%" i
@@ -61,9 +63,6 @@ snippet unlesse "unlesse"
 endsnippet
 
 snippet y "y"
-<%= yield :${1:partial} %>
-endsnippet
-
 <%= yield :${1:partial} %>
 endsnippet
 
