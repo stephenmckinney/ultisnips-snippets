@@ -12,38 +12,38 @@ endsnippet
 
 snippet ajax "ajax"
 $.ajax({
-	url: "${1:mydomain.com/url}",
-	type: "${2:POST}",
-	dataType: "${3:xml/html/script/json}",
-	data: $.param( $("${4:Element or Expression}") ),
-	complete: function() {
-		${5://called when complete}
-	},
-	success: function() {
-		${6://called when successful}
-	},
-	error: function() {
-		${7://called when there is an error}
-	},
+  url: "${1:mydomain.com/url}",
+  type: "${2:POST}",
+  dataType: "${3:xml/html/script/json}",
+  data: $.param( $("${4:Element or Expression}") ),
+  complete: function() {
+    ${5://called when complete}
+  },
+  success: function() {
+    ${6://called when successful}
+  },
+  error: function() {
+    ${7://called when there is an error}
+  },
 });
 endsnippet
 
 snippet ajaxerror "ajaxerror"
 .ajaxError(function(${1:request, settings}) {
-	${2://stuff to do when an AJAX call returns an error};
+  ${2://stuff to do when an AJAX call returns an error};
 });
 ${3}
 endsnippet
 
 snippet ajaxget "ajaxget"
 $.get('${1:/test/ajax-test.xml}', function(xml){
-	${2:alert( ("title",xml).text() ) //optional stuff to do after get;}
+  ${2:alert( ("title",xml).text() ) //optional stuff to do after get;}
 });
 endsnippet
 
 snippet ajaxgetif "ajaxgetif"
 $.getIfModified('${1:/test/test.cgi}', function(data){
-	${2:alert( "Data loaded: " + data ) //optional stuff to do after get;}
+  ${2:alert( "Data loaded: " + data ) //optional stuff to do after get;}
 });
 endsnippet
 
@@ -57,39 +57,39 @@ endsnippet
 
 snippet ajaxsend "ajaxsend"
 .ajaxSend(function(${1:request, settings}) {
-	${2://stuff to do when an AJAX call returns an error};
+  ${2://stuff to do when an AJAX call returns an error};
 });
 ${3}
 endsnippet
 
 snippet ajaxsetup "ajaxsetup"
 $.ajaxSetup({
-	url: "${1:mydomain.com/url}",
-	type: "${2:POST}",
-	dataType: "${3:xml/html/script/json}",
-	data: $.param( $("${4:Element or Expression}") ),
-	complete: function() {
-		${5://called when complete}
-	},
-	success: function() {
-		${6://called when successful}
-	},
-	error: function() {
-		${7://called when there is an error}
-	},
+  url: "${1:mydomain.com/url}",
+  type: "${2:POST}",
+  dataType: "${3:xml/html/script/json}",
+  data: $.param( $("${4:Element or Expression}") ),
+  complete: function() {
+    ${5://called when complete}
+  },
+  success: function() {
+    ${6://called when successful}
+  },
+  error: function() {
+    ${7://called when there is an error}
+  },
 });
 endsnippet
 
 snippet ajaxstart "ajaxstart"
 $.ajaxStart(function() {
-	${1://stuff to do when an AJAX call is started and no other AJAX calls are in progress};
+  ${1://stuff to do when an AJAX call is started and no other AJAX calls are in progress};
 });
 ${2}
 endsnippet
 
 snippet ajaxstop "ajaxstop"
 $.ajaxStop(function() {
-	${1://stuff to do when an AJAX call is started and no other AJAX calls are in progress};
+  ${1://stuff to do when an AJAX call is started and no other AJAX calls are in progress};
 });
 ${2}
 endsnippet
@@ -127,19 +127,19 @@ endsnippet
 
 snippet bind "bind"
 ${1:obj}.bind('${2:event name}', function(${3:event}) {
-	${4:// Act on the event}
+  ${4:// Act on the event}
 });
 endsnippet
 
 snippet blur "blur"
 ${1:obj}.blur(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet change "change"
 ${1:obj}.change(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
@@ -149,7 +149,7 @@ endsnippet
 
 snippet click "click"
 ${1:obj}.click(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
@@ -171,13 +171,13 @@ endsnippet
 
 snippet dblclick "dblclick"
 ${1:obj}.dblclick(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet each "each"
 ${1:obj}.each(function(index) {
-	${2:this.innerHTML = this + " is the element, " + index + " is the position";}
+  ${2:this.innerHTML = this + " is the element, " + index + " is the position";}
 });
 endsnippet
 
@@ -195,7 +195,7 @@ endsnippet
 
 snippet error "error"
 ${1:obj}.error(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
@@ -205,7 +205,7 @@ endsnippet
 
 snippet fadeinc "fadeinc"
 ${1:obj}.fadeIn('slow/400/fast', function() {
-	${2://Stuff to do *after* the animation takes place};
+  ${2://Stuff to do *after* the animation takes place};
 });
 endsnippet
 
@@ -215,7 +215,7 @@ endsnippet
 
 snippet fadeoutc "fadeoutc"
 ${1:obj}.fadeOut('slow/400/fast', function() {
-	${2://Stuff to do *after* the animation takes place};
+  ${2://Stuff to do *after* the animation takes place};
 });
 endsnippet
 
@@ -225,7 +225,7 @@ endsnippet
 
 snippet fadetoc "fadetoc"
 ${1:obj}.fadeTo('slow/400/fast', ${2:0.5}, function() {
-	${3://Stuff to do *after* the animation takes place};
+  ${3://Stuff to do *after* the animation takes place};
 });
 endsnippet
 
@@ -239,7 +239,7 @@ endsnippet
 
 snippet focus "focus"
 ${1:obj}.focus(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
@@ -257,7 +257,7 @@ endsnippet
 
 snippet getscript "getscript"
 $.getScript('${1:somescript.js}', function(){
-	${2://optional stuff to do after getScript;}
+  ${2://optional stuff to do after getScript;}
 });
 endsnippet
 
@@ -271,15 +271,15 @@ endsnippet
 
 snippet hidec "hidec"
 ${1:obj}.hide('${2:slow/400/fast}', function() {
-	${3://Stuff to do *after* the animation takes place}
+  ${3://Stuff to do *after* the animation takes place}
 });
 endsnippet
 
 snippet hover "hover"
 ${1:obj}.hover(function() {
-	${2:// Stuff to do when the mouse enters the element;}
+  ${2:// Stuff to do when the mouse enters the element;}
 }, function() {
-	${3:// Stuff to do when the mouse leaves the element;}
+  ${3:// Stuff to do when the mouse leaves the element;}
 });${4}
 endsnippet
 
@@ -305,43 +305,43 @@ endsnippet
 
 snippet load "load"
 ${1:obj}.load(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet loadf "loadf"
 <+obj+>.load('<+/path/to/file.htm+>', { <+<+param1+>: "<+value1+>", <+param2+>: "<+value2+>"+> }, function() {
-	<+// Stuff to do after the page is loaded+>
+  <+// Stuff to do after the page is loaded+>
 });snippet loadif
 <+obj+>.loadIfModified('<+/path/to/file.htm+>', { <+<+param1+>: "<+value1+>", <+param2+>: "<+value2+>"+> }, function() {
-	<+// Stuff to do after the page is loaded+>
+  <+// Stuff to do after the page is loaded+>
 });snippet mdown
 ${1:obj}.mousedown(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet mmove "mmove"
 ${1:obj}.mousemove(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet mout "mout"
 ${1:obj}.mouseout(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet mover "mover"
 ${1:obj}.mouseover(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet mup "mup"
 ${1:obj}.mouseup(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
@@ -355,7 +355,7 @@ endsnippet
 
 snippet one "one"
 ${1:obj}.one('${2:event name}', function(${3:event}) {
-	${4:// Act on the event once}
+  ${4:// Act on the event once}
 });
 endsnippet
 
@@ -399,19 +399,19 @@ endsnippet
 
 snippet reset "reset"
 ${1:obj}.reset(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet resize "resize"
 ${1:obj}.resize(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
 snippet scroll "scroll"
 ${1:obj}.scroll(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
@@ -421,19 +421,19 @@ endsnippet
 
 snippet sdownc "sdownc"
 ${1:obj}.slideDown('${2:slow/400/fast}', function() {
-	${3://Stuff to do *after* the animation takes place};
+  ${3://Stuff to do *after* the animation takes place};
 });
 endsnippet
 
 snippet sdupc "sdupc"
 ${1:obj}.slideUp('${2:slow/400/fast}', function() {
-	${3://Stuff to do *after* the animation takes place};
+  ${3://Stuff to do *after* the animation takes place};
 });
 endsnippet
 
 snippet select "select"
 ${1:obj}.select(function() {
-	${2:// Act on the event}
+  ${2:// Act on the event}
 });
 endsnippet
 
@@ -443,7 +443,7 @@ endsnippet
 
 snippet showc "showc"
 ${1:obj}.show('${2:slow/400/fast}', function() {
-	${3://Stuff to do *after* the animation takes place}
+  ${3://Stuff to do *after* the animation takes place}
 });
 endsnippet
 
@@ -461,7 +461,7 @@ endsnippet
 
 snippet submit "submit"
 ${1:obj}.submit(function() {
-	${2:// Act on the event once}
+  ${2:// Act on the event once}
 });
 endsnippet
 
@@ -479,9 +479,9 @@ endsnippet
 
 snippet tog "tog"
 ${1:obj}.toggle(function() {
-	${2:// Stuff to do every *odd* time the element is clicked;}
+  ${2:// Stuff to do every *odd* time the element is clicked;}
 }, function() {
-	${3:// Stuff to do every *even* time the element is clicked;}
+  ${3:// Stuff to do every *even* time the element is clicked;}
 });
 ${4}
 endsnippet

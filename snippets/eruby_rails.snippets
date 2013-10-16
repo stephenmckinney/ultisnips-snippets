@@ -79,6 +79,10 @@ snippet fcb "f.check_box"
 <%= ${1:f}.check_box :${2:attribute} %>
 endsnippet
 
+snippet fcs "f.collection_select"
+<%= f.collection_select ${2:object-method}, ${3:collection}, ${4:collection-value_method}, ${5:collection-text_method}${6:, options, html_options} %>${7}
+endsnippet
+
 snippet fff "f.file_field"
 <%= ${1:f}.file_field :${2:attribute} %>
 endsnippet
@@ -105,6 +109,12 @@ endsnippet
 
 snippet fta "f.text_area"
 <%= ${1:f}.text_area :${2:attribute} %>
+endsnippet
+
+snippet fff "f.fields_for"
+<%= f.fields_for :${1:association} do |${2:ff}| %>
+  ${3}
+<% end %>
 endsnippet
 
 snippet ftf "f.text_field"

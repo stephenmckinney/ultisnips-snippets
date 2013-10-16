@@ -14,8 +14,8 @@ endsnippet
 
 snippet case "case"
 case '${1:case}':
-	${2:// code}
-	break;
+  ${2:// code}
+  break;
 ${3}
 endsnippet
 
@@ -27,7 +27,7 @@ endsnippet
 
 snippet do "do"
 do {
-	${2:/* code */}
+  ${2:/* code */}
 } while (${1:/* condition */});
 endsnippet
 
@@ -37,9 +37,9 @@ for (var <+i+>=0; <+i+> < <+<+Things+>.length+>; <+i+>++) {
 };
 endsnippet
 
-snippet fun "fun"
-function ${1}(${2}) {
-	${3}
+snippet fun "function" w
+function${1: name}(${2}) {
+  ${3}
 }
 endsnippet
 
@@ -59,7 +59,7 @@ endsnippet
 
 snippet ife "ife"
 if (${1:true}) {
-	${2}
+  ${2}
 } else {
 };
 endsnippet
@@ -92,18 +92,18 @@ endsnippet
 
 snippet proto "proto"
 ${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
-	${4:// body}
+  ${4:// body}
 };
 endsnippet
 
 snippet switch "switch"
 switch(${1:expression}) {
-	case '${3:case}':
-		${4:// code}
-		break;
-	${5}
-	default:
-		${2:// code}
+  case '${3:case}':
+    ${4:// code}
+    break;
+  ${5}
+  default:
+    ${2:// code}
 }
 endsnippet
 
@@ -117,7 +117,7 @@ endsnippet
 
 snippet whi "whi"
 while (${1:/* condition */}) {
-	${2:/* code */}
+  ${2:/* code */}
 }
 endsnippet
 

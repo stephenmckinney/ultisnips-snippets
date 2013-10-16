@@ -1,104 +1,45 @@
-snippet anaf "anaf"
-accepts_nested_attributes_for :${1:object}
+###########################
+# Contoller methods
+###########################
+
+snippet bf "before_filter"
+ before_filter :${1:method}
 endsnippet
 
-snippet art "art"
-assert_redirected_to ${1::action => "${2:index}"}
-endsnippet
-
-snippet artnp "artnp"
-assert_redirected_to ${2:${12:parent}_${13:child}_path(${14:@}${15:${12}}, ${16:@}${17:${13}})}
-endsnippet
-
-snippet artnpp "artnpp"
-assert_redirected_to ${10:${2:parent}_${3:child}_path(${4:@}${5:${2}})}
-endsnippet
-
-snippet artp "artp"
-assert_redirected_to ${2:${12:model}_path(${13:@}${14:${12}})}
-endsnippet
-
-snippet artpp "artpp"
-assert_redirected_to ${10:${2:model}s_path}
-endsnippet
-
-snippet asd "asd"
-assert_difference "${1:Model}.${2:count}", $1 do
-	${3}
-end
-endsnippet
-
-snippet asnd "asnd"
-assert_no_difference "${1:Model}.${2:count}" do
-	${3}
-end
-endsnippet
-
-snippet asre "asre"
-assert_response :${1:success}, @response.body${2}
-endsnippet
-
-snippet asrj "asrj"
-assert_rjs :${1:replace}, ${2:"${3:dom id}"}
-endsnippet
-
-snippet ass "ass"
-assert_select '${1:path}'${2:, :${3:text} => ${4:'${5:inner_html}'}}${6: do
-	$0
-end}
-endsnippet
-
-snippet bf "bf"
-before_filter :${1:method}
-endsnippet
-
-snippet bt "bt"
-belongs_to :${1:association}
-endsnippet
-
-snippet clam "ActiveRecord class" !b
-class ${1:Model} < ActiveRecord::Base
-  ${0}
-end
-endsnippet
-snippet crw "crw"
-cattr_accessor :${1:attr_names}
-endsnippet
-
-snippet defcreate "defcreate"
+snippet defcreate "def create"
 def create
-	@${1:model_class_name} = ${2:ModelClassName}.new(params[:$1])
-	respond_to do |wants|
-		if @$1.save
-			flash[:notice] = '$2 was successfully created.'
-			wants.html { redirect_to(@$1) }
-			wants.xml  { render :xml => @$1, :status => :created, :location => @$1 }
-		else
-			wants.html { render :action => "new" }
-			wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
-		end
-	end
+  @${1:model_class_name} = ${2:ModelClassName}.new(params[:$1])
+  respond_to do |wants|
+    if @$1.save
+      flash[:notice] = '$2 was successfully created.'
+      wants.html { redirect_to(@$1) }
+      wants.xml  { render :xml => @$1, :status => :created, :location => @$1 }
+    else
+      wants.html { render :action => "new" }
+      wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+    end
+  end
 end${3}
 endsnippet
 
-snippet defdestroy "defdestroy"
+snippet defdestroy "def destroy"
 def destroy
-	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
-	@$1.destroy
-	respond_to do |wants|
-		wants.html { redirect_to($1s_url) }
-		wants.xml  { head :ok }
-	end
+  @${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+  @$1.destroy
+  respond_to do |wants|
+    wants.html { redirect_to($1s_url) }
+    wants.xml  { head :ok }
+  end
 end${3}
 endsnippet
 
-snippet defedit "defedit"
+snippet defedit "def edit"
 def edit
-	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+  @${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 end
 endsnippet
 
-snippet defindex "defindex"
+snippet defindex "def index"
 def index
   @${1:model_class_name}s = ${2:ModelClassName}.all
   respond_to do |wants|
@@ -108,121 +49,165 @@ def index
 end${3}
 endsnippet
 
-snippet defnew "defnew"
+snippet defnew "def new"
 def new
-	@${1:model_class_name} = ${2:ModelClassName}.new
-	respond_to do |wants|
-		wants.html # new.html.erb
-		wants.xml  { render :xml => @$1 }
-	end
+  @${1:model_class_name} = ${2:ModelClassName}.new
+  respond_to do |wants|
+    wants.html # new.html.erb
+    wants.xml  { render :xml => @$1 }
+  end
 end${3}
 endsnippet
 
-snippet defshow "defshow"
+snippet defshow "def show"
 def show
-	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
-	respond_to do |wants|
-		wants.html # show.html.erb
-		wants.xml  { render :xml => @$1 }
-	end
+  @${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+  respond_to do |wants|
+    wants.html # show.html.erb
+    wants.xml  { render :xml => @$1 }
+  end
 end${3}
 endsnippet
 
-snippet defupdate "defupdate"
+snippet defupdate "def update"
 def update
-	@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
-	respond_to do |wants|
-		if @$1.update_attributes(params[:$1])
-			flash[:notice] = '$2 was successfully updated.'
-			wants.html { redirect_to(@$1) }
-			wants.xml  { head :ok }
-		else
-			wants.html { render :action => "edit" }
-			wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
-		end
-	end
+  @${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
+  respond_to do |wants|
+    if @$1.update_attributes(params[:$1])
+      flash[:notice] = '$2 was successfully updated.'
+      wants.html { redirect_to(@$1) }
+      wants.xml  { head :ok }
+    else
+      wants.html { render :action => "edit" }
+      wants.xml  { render :xml => @$1.errors, :status => :unprocessable_entity }
+    end
+  end
 end${3}
 endsnippet
 
-snippet fina "fina"
-find(:all, :conditions => ['${1:field} = ?', ${2:true}])${3}
-endsnippet
+###########################
+# ActiveRecord Finders
+###########################
 
-snippet finf "finf"
-find(:first, :conditions => ['${1:field} = ?', ${2:true}])${3}
-endsnippet
-
-snippet fini "fini"
+snippet fin "find"
 find(${1:id})${2}
 endsnippet
 
-snippet finl "finl"
+snippet fina "find(:all)"
+find(:all, :conditions => ['${1:field} = ?', ${2:true}])${3}
+endsnippet
+
+snippet finf "find(:first)"
+find(:first, :conditions => ['${1:field} = ?', ${2:true}])${3}
+endsnippet
+
+snippet finl "find(:last)"
 find(:last, :conditions => ['${1:field} = ?', ${2:true}])${3}
 endsnippet
 
-snippet flash "flash"
-flash[:${1:notice}] = "${2}"
+###########################
+# ActiveRecord Associations
+###########################
+
+snippet bt "belongs_to"
+belongs_to :${1:association}
 endsnippet
 
-snippet habtm "habtm"
+snippet habtm "has_and_belongs_to_many"
 has_and_belongs_to_many :${1:object}, :join_table => "${2:table_name}", :foreign_key => "${3}_id"${4}
 endsnippet
 
-snippet hm "hm"
+snippet hm "has_many"
 has_many :${1:object}
 endsnippet
 
-snippet hmd "hmd"
+snippet hmd "has_many"
 has_many :${1:object}s${2:, :class_name => "${1}", :foreign_key => "${4:reference}_id"}
 endsnippet
 
-snippet hmt "hmt"
+snippet hmt "has_many"
 has_many :${1:object}, :through => :${2:object}
 endsnippet
 
-snippet ho "ho"
+snippet ho "has_one"
 has_one :${1:object}
 endsnippet
 
-snippet i18 "i18"
-I18n.t('${1:type.key}')${2}
-endsnippet
+###########################
+# Logger
+###########################
 
-snippet ist "ist"
-<%= image_submit_tag("<+agree.png+>"<+<+, :id => "<+id+>"+><+, :name => "<+name+>"+><+, :class => "<+class+>"+><+, :disabled => <+false+>+>+>) %>
-endsnippet
-
-snippet log "log"
+snippet log "Rails.logger"
 Rails.logger.${1:debug} "${2:message}"${3}
 endsnippet
 
-snippet logc "logc"
+snippet logc "Rails.logger.debug w/ color"
 Rails.logger.debug "${1:message}".white_on_red
 endsnippet
 
-snippet logd "logd"
+snippet logd "Rails.logger.debug"
 Rails.logger.debug "${1:message}"
 endsnippet
 
-snippet loge "loge"
+snippet loge "Rails.logger.error"
 Rails.logger.error "${1:message}"
 endsnippet
 
-snippet logf "logf"
+snippet logf "Rails.logger.fatal"
 Rails.logger.fatal "${1:message}"
 endsnippet
 
-snippet logi "logi"
+snippet logi "Rails.logger.info"
 Rails.logger.info "${1:message}"
 endsnippet
 
-snippet logw "logw"
+snippet logw "Rails.logger.warn"
 Rails.logger.warn "${1:message}"
 endsnippet
 
-snippet mac "mac"
-add_column :${1:table}, :${2:column}, :${3:type}
+snippet logp "Rails.logger.debug params"
+Rails.logger.debug "params START".white_on_red
+params.each {|k,v| Rails.logger.debug "key: #{k}, val: #{v}".white_on_red}
+Rails.logger.debug "params END".white_on_red
 endsnippet
+
+###########################
+# Migrations
+###########################
+
+snippet mac "add_column"
+add_column :${1:table_name}, :${2:column_name}, :${3:type}
+endsnippet
+
+snippet mai "add_index"
+add_index :${1:table_name}, :${2:column_name}
+endsnippet
+
+snippet mcc "change_column"
+change_column :${1:table_name}, :${2:column_name}, :${3:type}
+endsnippet
+
+snippet mrc "remove_column"
+remove_column :${1:table_name}, :${2:column_name}
+endsnippet
+
+snippet mri "remove_index"
+remove_index :${1:table_name}, :${2:old_name}, :${3:new_name}
+endsnippet
+
+snippet mrc "rename_column"
+rename_column :${1:table_name}, :${2:old_name}, :${3:new_name}
+endsnippet
+
+snippet mct "create_table"
+create_table :${1:table_name} do |t|
+  t.column_name :${2:name}, :${3:type}
+end
+endsnippet
+
+###########################
+# Routes
+###########################
 
 snippet mapc "mapc"
 ${1:map}.${2:connect} '${3:controller/:action/:id}'
@@ -242,58 +227,84 @@ endsnippet
 
 snippet mapwo "mapwo"
 ${1:map}.with_options :${2:controller} => '${3:thing}' do |$3|
-	${4}
+  ${4}
 end
+endsnippet
+
+snippet anaf "accepts_nested_attributes_for"
+accepts_nested_attributes_for :${1:object}
+endsnippet
+
+snippet art "assert_redirected_to"
+assert_redirected_to ${1::action => "${2:index}"}
+endsnippet
+
+snippet artnp "assert_redirected_to"
+assert_redirected_to ${2:${12:parent}_${13:child}_path(${14:@}${15:${12}}, ${16:@}${17:${13}})}
+endsnippet
+
+snippet artnpp "assert_redirected_to"
+assert_redirected_to ${10:${2:parent}_${3:child}_path(${4:@}${5:${2}})}
+endsnippet
+
+snippet artp "assert_difference"
+assert_redirected_to ${2:${12:model}_path(${13:@}${14:${12}})}
+endsnippet
+
+snippet artpp "assert_no_difference"
+assert_redirected_to ${10:${2:model}s_path}
+endsnippet
+
+snippet asd "assert_difference"
+assert_difference "${1:Model}.${2:count}", $1 do
+  ${3}
+end
+endsnippet
+
+snippet asnd "assert_no_difference"
+assert_no_difference "${1:Model}.${2:count}" do
+  ${3}
+end
+endsnippet
+
+snippet asre "assert_select"
+assert_response :${1:success}, @response.body${2}
+endsnippet
+
+snippet asrj "assert_rjs"
+assert_rjs :${1:replace}, ${2:"${3:dom id}"}
+endsnippet
+
+snippet ass "assert_select"
+assert_select '${1:path}'${2:, :${3:text} => ${4:'${5:inner_html}'}}${6: do
+  $0
+end}
+endsnippet
+
+snippet clam "an ActiveRecord class" !b
+class ${1:Model} < ActiveRecord::Base
+  ${0}
+end
+endsnippet
+
+snippet crw "cattr_accessor"
+cattr_accessor :${1:attr_names}
+endsnippet
+
+snippet flash "flash[:notice]"
+flash[:${1:notice}] = "${2}"
+endsnippet
+
+snippet i18 "I18n"
+I18n.t('${1:type.key}')${2}
+endsnippet
+
+snippet ist "image_submit_tag"
+<%= image_submit_tag("<+agree.png+>"<+<+, :id => "<+id+>"+><+, :name => "<+name+>"+><+, :class => "<+class+>"+><+, :disabled => <+false+>+>+>) %>
 endsnippet
 
 snippet mbs "mbs"
 before_save :${1:method}
-endsnippet
-
-snippet mcc "mcc"
-change_column :${1:table}, :${2:column}, :${3:type}
-endsnippet
-
-snippet mccc "mccc"
-t.column :${1:title}, :${2:string}
-endsnippet
-
-snippet mcht "mcht"
-change_table :${1:table_name} do |t|
-	${2}
-end
-endsnippet
-
-snippet mcol "mcol"
-remove_column :${1:table}, :${2:column}
-endsnippet
-
-snippet mct "mct"
-create_table :${1:table_name} do |t|
-	t.column :${2:name}, :${3:type}
-end
-endsnippet
-
-snippet migration "migration"
-class ${1:`!v Snippet_MigrationNameFromFilename()`} < ActiveRecord::Migration
-	def self.up
-		${2}
-	end
-	def self.down
-	end
-end
-endsnippet
-
-snippet mrc "mrc"
-remove_column :${1:table}, :${2:column}
-endsnippet
-
-snippet mrmc "mrmc"
-remove_column :${1:table}, :${2:column}
-endsnippet
-
-snippet mrnc "mrnc"
-rename_column :${1:table}, :${2:old}, :${3:new}
 endsnippet
 
 snippet mrw "mrw"
@@ -322,7 +333,7 @@ endsnippet
 
 snippet rest "rest"
 respond_to do |wants|
-	wants.${1:html}${2: { $0 \}}
+  wants.${1:html}${2: { $0 \}}
 end
 endsnippet
 
@@ -400,7 +411,7 @@ endsnippet
 
 snippet ru "ru"
 render :update do |${1:page}|
-	$1.${2}
+  $1.${2}
 end
 endsnippet
 
@@ -414,16 +425,16 @@ endsnippet
 
 snippet sweeper "sweeper"
 class ${1:ModelClassName}Sweeper < ActionController::Caching::Sweeper
-	observe $1
-	def after_save(${2:model_class_name})
-		expire_cache($2)
-	end
-	def after_destroy($2)
-		expire_cache($2)
-	end
-	def expire_cache($2)
-		expire_page
-	end
+  observe $1
+  def after_save(${2:model_class_name})
+    expire_cache($2)
+  end
+  def after_destroy($2)
+    expire_cache($2)
+  end
+  def expire_cache($2)
+    expire_page
+  end
 end
 endsnippet
 
@@ -504,7 +515,7 @@ endsnippet
 
 snippet test "test"
 test "${1:case_name}" do
-	${2}
+  ${2}
 end
 endsnippet
 
