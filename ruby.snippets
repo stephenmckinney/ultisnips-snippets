@@ -1,12 +1,39 @@
+#
+# Global functions
+#
+
+global !p
+
+def write_instance_vars(arglist, snip):
+	args = str(arglist).split(',')
+	for arg in args:
+		name = arg.strip().replace(':', ' ').split(' ', 1)[0]
+		if name:
+			snip += '  @{} = {}'.format(name, name)
+		else:
+			snip += ''
+
+endglobal
+
+#
+# Snippets
+#
+
 snippet # "#" i
 #{${1:var}}${2}
+endsnippet
+
+snippet ###
+=begin
+	$0
+=end
 endsnippet
 
 snippet am "am"
 alias_method :${1:new_name}, :${2:old_name}
 endsnippet
 
-snippet as "as"
+snippet as "assert"
 assert ${1:test}, "${2:failure_message}"
 endsnippet
 
@@ -26,7 +53,7 @@ snippet ascd "ascd"
 assert_const_defined ${1:object}, ${2:constant_name}
 endsnippet
 
-snippet ase "ase"
+snippet ase "assert_equal"
 assert_equal ${1:expected}, ${2:actual}
 endsnippet
 
@@ -170,7 +197,7 @@ snippet astr "astr"
 assert_true ${1:actual}
 endsnippet
 
-snippet beg "beg"
+snippet "\b(try|beg(in)?)" "begin ... rescue ... end" r
 begin
 	${1:process...}
 rescue ${2:Exception} => ${3:e}
@@ -185,17 +212,20 @@ Benchmark.bmbm do |results|
 end
 endsnippet
 
-snippet case "case"
-case ${1}
-when ${2}
-else
+snippet "\bcas(e)?" "case <variable> when <expression> ... end" r
+case ${1:variable}
+when ${2:expression}
 	${3}
+else
+	${0}
 end
 endsnippet
 
-snippet cla "cla"
-class ${1}
-	${3}
+snippet "\bcla(ss)?" "class <class_name> def initialize ... end end" r
+class ${1:`!p snip.rv = snip.basename.title().replace('_', '')`}
+	def initialize${2:(${3:*args})}
+		$0
+	end
 end
 endsnippet
 
@@ -207,21 +237,28 @@ snippet deb "deb"
 debugger
 endsnippet
 
-snippet def "def"
-def ${1:name}
-	${2}
+snippet def "def <name>..."
+def ${1:method_name}${2:(${3:*args})}
+	$0
 end
 endsnippet
 
-snippet defi "defi"
-def initialize${1}
-	${2}
+snippet defi "def initialize ..."
+def initialize($1)`!p write_instance_vars(t[1],snip)`$0
 end
 endsnippet
 
 snippet defmm "defmm"
 def method_missing(meth, *args, &blk)
 	${1}
+end
+endsnippet
+
+snippet defr "def <name> ... rescue ..."
+def ${1:method_name}${2:(${3:*args})}
+	$4
+rescue
+	$0
 end
 endsnippet
 
@@ -397,25 +434,20 @@ snippet Ml "Ml"
 File.open(${1:dump_path}, "rb") { |${2:file}| Marshal.load(${3:$2}) }
 endsnippet
 
-snippet mod "mod"
-module ${1:`!v Snippet_RubyClassNameFromFilename()`}
-	${2}
+snippet "\bmod(ule)?" "module" r
+module ${1:`!p snip.rv = snip.basename.title().replace('_', '')`}
+	$0
 end
 endsnippet
 
-snippet module "module"
-module ${1:`!v Snippet_RubyClassNameFromFilename()`}
-	def self.included(base)
-		base.extend         ClassMethods
-		base.class_eval do
-		  ${2}
-		end
-		base.send :include, InstanceMethods
-	end # self.included
-	module ClassMethods
-	end # ClassMethods
-	module InstanceMethods
-	end # InstanceMethods
+snippet mt "minitest test case"
+require 'minitest/autorun'
+require_relative './${1:file_name_no_extension}'
+
+class Test${2:class_name} < Minitest::Test
+	def test_${3:case_name}
+		assert true
+	end
 end
 endsnippet
 
@@ -463,8 +495,12 @@ snippet rep "rep"
 results.report("${1:name}:") { TESTS.times { ${2} } }
 endsnippet
 
-snippet req "req"
-require "${1:library}"
+snippet req "require"
+require '${1:library}'
+endsnippet
+
+snippet reqr "require_relative"
+require_relative './${1:filename}'
 endsnippet
 
 snippet rw "rw"
@@ -509,21 +545,13 @@ task :${2:task_name}${3: => [:dependent, :tasks]} do
 end
 endsnippet
 
-snippet tc "tc"
+snippet tu "test/unit test case"
 require "test/unit"
 require "${1:library_file_name}"
 class Test${2:`!v Snippet_RubyClassNameFromFilename()`} < Test::Unit::TestCase
 	def test_${3:case_name}
 		${4}
 	end
-end
-endsnippet
-
-snippet try "try"
-begin
-	${1:process...}
-rescue ${2:Exception} => ${3:e}
-	${4:handle error...}
 end
 endsnippet
 
@@ -544,9 +572,16 @@ snippet w "w"
 attr_writer :${1:attr_names}
 endsnippet
 
-snippet while "while"
+snippet watch "watch() for observr gem"
+watch('test/test_.*\.rb') { |md| system("ruby #{md[0]}") }
+watch('lib/(.*)\.rb') { |md| system("ruby test/test_#{md[1]}.rb") }
+
+watch('file\.rb|test\.rb') { |md| system('ruby test.rb') }
+endsnippet
+
+snippet while "while <condition> ... end"
 while ${1:condition}
-	${2}
+	$0
 end
 endsnippet
 
